@@ -5,10 +5,19 @@ package ua.epam.spring.hometask.domain;
  */
 public enum EventRating {
 
-    LOW,
+    LOW(0.8),
 
-    MID,
+    MID(1),
 
-    HIGH;
+    HIGH(1.2);
 
+    double rate;
+
+    EventRating(double rate) {
+        this.rate = rate;
+    }
+
+    public double getRate() {
+        return rate;
+    }
 }
