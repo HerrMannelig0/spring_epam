@@ -150,6 +150,9 @@ public class Event extends DomainObject {
 
     public void setAirDates(NavigableSet<LocalDateTime> airDates) {
         this.airDates = airDates;
+        for (LocalDateTime airDate : airDates) {
+            soldTickets.put(airDate, new HashSet<>());
+        }
     }
 
     public double getBasePrice() {

@@ -15,6 +15,10 @@ public class BirthdayDiscount implements DiscountStrategy {
 
   @Override
   public byte calculate(@Nullable User user, @Nonnull Event event, @Nonnull LocalDateTime airDateTime, long numberOfTickets) {
+
+    if(user == null)
+      return 0;
+
     LocalDateTime userBirthday = user.getBirthday();
 
     if (userBirthday == null)

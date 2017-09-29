@@ -44,7 +44,7 @@ public class BookingServiceImpl implements BookingService {
     }
     byte discount = discountService.getDiscount(user, event, dateTime, seats.size());
 
-    return discount * totalPrice;
+    return totalPrice * (1 - discount);
   }
 
   private double calculateVipSeatRate(Long seat, Set<Long> vipSeats) {
